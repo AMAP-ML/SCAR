@@ -16,7 +16,7 @@
 
 
 <div>
-    <sup>1</sup>Amap, Alibaba Group &emsp
+    <sup>1</sup>Amap, Alibaba Group
 </div>
 <br>
 </div>
