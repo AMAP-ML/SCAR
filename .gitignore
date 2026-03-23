@@ -1,0 +1,7 @@
+data
+pretrained_models
+checkpoints
+wandb
+__pycache__
+logs/
+*egg-info

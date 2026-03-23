@@ -1,0 +1,66 @@
+# config.yaml —— 与你的原始 argparse 完全一致
+
+use_wandb: false
+no_local_save: false
+vq_model: "VQ-16"
+vq_ckpt: "./pretrained_models/vq_ds16_t2i.pt"
+codebook_size: 16384
+codebook_embed_dim: 8
+gpt_model: "GPT-XL"
+gpt_type: "edit"
+gpt_mode: null
+vocab_size: 16384
+cls_token_num: 120
+dropout_p: 0.1
+token_dropout_p: 0.1
+drop_path: 0.0
+no_compile: false
+dataset: "multigen"
+
+
+image_size: 512
+downsample_size: 16
+num_classes: 1000
+epochs: 1
+lr: 0.0001              # 1e-4
+weight_decay: 0.05      # 5e-2
+beta1: 0.9
+beta2: 0.95
+max_grad_norm: 1.0
+
+
+use_distill: true
+# use_distill: false
+distill_mode: "dinov2_conv"
+output_dir: 
+version: "ab_vitb_f"
+distill_loss_weight: 0.2
+sample_loss_weight: 0.1
+# gpt_ckpt: "../pretrained_models/editar_release/editar_release.pt"
+gpt_ckpt: "../pretrained_models/llamagen_t2i/t2i_XL_stage2_512.pt"
+dino_level: "4th"
+dino_downsample: 2
+global_batch_size: 64
+transformer_layerlevel: 24
+dino_loss_level: 12
+ckpt_every: 10000
+cond_img_size: 448
+val_cond: "hed"
+cond_type: "hed"
+
+
+
+image_lr_size: 128
+global_seed: 0
+num_workers: 4
+log_every: 100
+gradient_accumulation_steps: 1
+mixed_precision: "bf16"
+t5_path: "pretrained_models/t5-ckpt"
+t5_model_type: "flan-t5-xl"
+t5_feature_max_len: 120
+t5_feature_dim: 2048
+dino_dim: 3072
+
+dataset_jsonl_path: ../../../data/limingcv_image/MultiGen-20M_depth/metadata.jsonl
+dataset_dir_path: ../../../data/limingcv_image/MultiGen-20M_depth/
